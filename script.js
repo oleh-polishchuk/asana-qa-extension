@@ -1,7 +1,9 @@
 ((window) => {
     const app = window.asanaQaExtension = window.asanaQaExtension || {};
 
-    app.validateTitle = req => {
+    app.validateTitle = (req, retries = 1) => {
+        if (retries > 5) return;
+
         const moreInfoLink = "https://telegra.ph/The-title-does-not-contain-a-brand-name-07-23";
         const BRANDS = [
             'N', 'N-UK', 'NUK', 'N-ES', 'NUS', 'N-US', 'NSUK', 'DC', 'DC-UK', 'NDC', 'DCUS/NUS',
@@ -24,8 +26,12 @@
                 `;
                     elem.insertBefore(info, elem.firstChild);
                 }
-                console.log("Error: Title does not have brand prefix.")
+                console.log("Extension: Title does not have brand prefix.")
             }
+        } else {
+            retries++;
+            setTimeout(() => (app.validateTitle(req, retries)), 1000);
+            console.log("Extension: Asana title input not found. Retry in 1 sec...");
         }
     };
 
