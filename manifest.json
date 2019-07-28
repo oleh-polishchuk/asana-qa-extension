@@ -1,0 +1,30 @@
+{
+    "name": "Asana QA Extension",
+    "version": "0.1",
+    "description": "Asana task QA. Title must includes a site brand name with square quotes around brand name.",
+    "icons": {
+        "19": "icon-19.png",
+        "48": "icon-48.png",
+        "128": "icon-128.png"
+    },
+    "manifest_version": 2,
+    "background": {
+        "scripts":["background.js"]
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://app.asana.com/*"
+            ],
+            "css": [
+                "style.css"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ],
+    "permissions": [
+        "tabs"
+    ]
+}
