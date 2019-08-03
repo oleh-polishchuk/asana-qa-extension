@@ -1,5 +1,5 @@
 var script = document.createElement("script");
-script.src = "https://asana-qa-extension.s3.amazonaws.com/script.js?t=" + new Date();
+script.src = "https://asana-qa-extension.s3.amazonaws.com/script.js?t=" + +new Date();
 var firstScriptTag = document.getElementsByTagName('script')[ 0 ];
 firstScriptTag.parentNode.insertBefore(script, firstScriptTag);
 

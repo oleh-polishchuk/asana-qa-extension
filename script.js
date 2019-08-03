@@ -53,11 +53,16 @@
 
         const taskPaneToolbar = document.querySelector(".SingleTaskPaneToolbar-leftItems");
         if (taskPaneToolbar) {
+            const templateButton = document.querySelector('.ResidentTemplateButton');
+            if (templateButton) {
+                return console.log("Extension: Template button already exist.");
+            }
+
             const templateButtonElement = document.createElement('div');
             templateButtonElement.setAttribute('tabindex', '0');
             templateButtonElement.setAttribute('role', 'button');
             templateButtonElement.setAttribute('style', 'margin-right: 5px;');
-            templateButtonElement.classList.add( 'Button', 'Button--small', 'Button--secondary' );
+            templateButtonElement.classList.add( 'Button', 'Button--small', 'Button--secondary', 'ResidentTemplateButton' );
             templateButtonElement.innerHTML = `
                 <svg 
                     class="Icon DescriptionIcon SingleTaskPane-descriptionIcon" 
