@@ -11,6 +11,7 @@
         const moreInfoLink = "https://telegra.ph/The-title-does-not-contain-a-brand-name-07-23";
         const BRANDS = [
             'N', 'N-UK', 'NUK', 'N-ES', 'NUS', 'N-US', 'NSUK', 'DC', 'DC-UK', 'NDC', 'DCUS/NUS', 'DCUK', 'N&DC', 'DC-US',
+            'AW-US', 'N&DC', 'N-US, N-UK', 'All Brands', 'ALL', 'ALL BRANDS', 'NDC-US', 'Platform wide', 'WV,DC',
         ];
 
         const titleInput = document.querySelector(".simpleTextarea.autogrowTextarea-input");
